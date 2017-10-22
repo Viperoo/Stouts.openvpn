@@ -1,3 +1,10 @@
 ---
 
-- fail: msg="RedHat is not supported now"
+- name: install package openvpn [RedHat]
+  yum: name=openvpn state=present
+  when: "ansible_os_family == 'RedHat'"
+
+- name: install package easy-rsa [RedHat]
+  yum: name=easy-rsa state=present
+  when: "ansible_os_family == 'RedHat'"
+
